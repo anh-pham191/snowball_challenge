@@ -62,24 +62,17 @@
                     <!-- Menu toggle button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-bell-o"></i>
-                        <span class="label label-warning">{{ $unreadNotificationCount }}</span>
+                        <!-- <span class="label label-warning">{{ $unreadNotificationCount }}</span> -->
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have {{ $unreadNotificationCount }} unread notifications</li>
+                        <!-- <li class="header">You have {{ $unreadNotificationCount }} unread notifications</li> -->
                         <li>
                             <!-- Inner Menu: contains the notifications -->
                             <ul class="menu">
-                                @foreach( $notifications as $notification )
-                                <li><!-- start notification -->
-                                    <a href="#">
-                                        <i class="fa fa-users text-aqua"></i> {{ $notification->content }}
-                                    </a>
-                                </li>
-                                <!-- end notification -->
-                                @endforeach
+                               
                             </ul>
                         </li>
-                        <li class="footer"><a href="{{ action('Admin\MeController@notifications') }}">View all</a></li>
+                        <li class="footer">View all</a></li>
                     </ul>
                 </li>
                 @if(0)
@@ -126,17 +119,16 @@
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <!-- The user image in the navbar-->
-                        <img src="{!! $authUser->getProfileImageUrl() !!}" class="user-image" alt="User Image">
+                        <img src="" class="user-image" alt="User Image">
                         <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                        <span class="hidden-xs">{{ $authUser->name }}</span>
+                        <span class="hidden-xs"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
                         <li class="user-header">
-                            <img src="{!! $authUser->getProfileImageUrl() !!}" class="img-circle" alt="User Image">
+                            <img src="" class="img-circle" alt="User Image">
                             <p>
-                                {{ $authUser->name }}
-                                <small>Member since : {{ $authUser->created_at->format('Y-m-d') }}</small>
+                                
                             </p>
                         </li>
                         <!-- Menu Body -->
