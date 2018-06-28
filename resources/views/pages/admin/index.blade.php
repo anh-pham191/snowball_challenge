@@ -22,6 +22,25 @@ Dashboard
 @stop
 
 @section('content')
+<h4>Top Level Domain Summary</h4>
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+	    	<th>Domain</th>
+	    	<th>Appearance</th>
+	  	</tr>
+  	</thead>
+  	<tbody>
+		@foreach($counts as $key => $count)
+			<tr>
+				<td>{!!$key!!}</td>
+				<td>{!! $count !!}</td>
+			</tr>
+		@endforeach
+	</tbody>
+</table>
+
+<br/>
 <table id="table" class="table table-striped table-bordered">
 	<thead>
 		<tr>
@@ -33,12 +52,12 @@ Dashboard
   	</thead>
   	<tbody>
 		@foreach($users as $user)
-		<tr>
-			<td>{!! explode(' ', $user->name)[0] !!}</td>
-			<td>{!! explode(' ', $user->name)[1] !!}</td>
-			<td> <a href="mailto:user@example.com">{!!$user->email!!}</a></td>
-			<td><a href="http://{!!$user->website!!}"">{!!$user->website!!}</a></td>
-		</tr>
+			<tr>
+				<td>{!! explode(' ', $user->name)[0] !!}</td>
+				<td>{!! explode(' ', $user->name)[1] !!}</td>
+				<td> <a href="mailto:user@example.com">{!!$user->email!!}</a></td>
+				<td><a href="http://{!!$user->website!!}"">{!!$user->website!!}</a></td>
+			</tr>
 		@endforeach
 	</tbody>
 	
