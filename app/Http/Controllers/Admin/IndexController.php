@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
+use LayerShifter\TLDExtract;
 
 class IndexController extends Controller
 {
-	private const DOMAIN = 1;
+	private const SUFFIX = 'suffix';
     public function index()
     {
     	$jsonurl = "https://jsonplaceholder.typicode.com/users";
@@ -21,6 +22,6 @@ class IndexController extends Controller
 	}
 
 	function getDomain($value){
-		return explode(".", $value)[self::DOMAIN];
+		return tld_extract($value)[self::SUFFIX];
 	}
 }
